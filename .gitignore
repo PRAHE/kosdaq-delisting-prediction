@@ -59,3 +59,9 @@ docs/research/prof_meeting/
 과제제안발표_kw0ss.pdf
 portfolio_slides.md
 
+src/research/ 
+src/baseline/ 
+src/modeling/ 
+src/analysis/ 
+src/team_project/ 
+src/__init__.py 
