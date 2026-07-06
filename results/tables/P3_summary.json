@@ -1,0 +1,98 @@
+{
+  "experiment": "S1_Phase3_Transformer_T2V",
+  "labeling": "L3_rolling_H24",
+  "K": 3,
+  "seeds": [
+    42,
+    7,
+    13,
+    21,
+    100
+  ],
+  "Transformer_T2V": {
+    "test_pr_auc_mean": 0.3419710161101809,
+    "test_pr_auc_std": 0.022645276469158857,
+    "test_pr_auc_min": 0.31040382727273463,
+    "test_pr_auc_max": 0.3658952266114888,
+    "test_roc_auc_mean": 0.8890689139594944,
+    "test_p20_mean": 0.7,
+    "test_p50_mean": 0.388,
+    "bootstrap_ci_avg_proba": {
+      "metric": "pr_auc",
+      "method": "bayesian_dirichlet",
+      "point_estimate": 0.3626276512792458,
+      "mean": 0.370606259389939,
+      "median": 0.3714746249368349,
+      "ci95_lo": 0.24697748154405563,
+      "ci95_hi": 0.5000008496282062,
+      "std": 0.06526650283304909,
+      "n_boot": 2000
+    },
+    "model_config": {
+      "model_dim": 64,
+      "num_heads": 4,
+      "num_layers": 1,
+      "dropout": 0.2,
+      "lr": 0.0005,
+      "batch_size": 256
+    }
+  },
+  "RF_baseline": {
+    "test_pr_auc_mean": 0.26945817715161996,
+    "test_pr_auc_std": 0.014690664502972075,
+    "test_roc_auc_mean": 0.8554594263966292,
+    "test_p20_mean": 0.58,
+    "test_p50_mean": 0.36800000000000005,
+    "bootstrap_ci_avg_proba": {
+      "metric": "pr_auc",
+      "method": "bayesian_dirichlet",
+      "point_estimate": 0.2702216165830085,
+      "mean": 0.27751572507795347,
+      "median": 0.27436588286963026,
+      "ci95_lo": 0.1656672474568988,
+      "ci95_hi": 0.40779221003371896,
+      "std": 0.06172739281073995,
+      "n_boot": 2000
+    }
+  },
+  "Phase1_GRU_ref": {
+    "test_pr_auc_mean": 0.3039316631162765,
+    "test_pr_auc_std": 0.046078570171086415,
+    "test_pr_auc_min": 0.2647328766658151,
+    "test_pr_auc_max": 0.3823315300564929,
+    "test_roc_auc_mean": 0.8527647138779393,
+    "test_p20_mean": 0.56,
+    "test_p50_mean": 0.38,
+    "bootstrap_ci_avg_proba": {
+      "metric": "pr_auc",
+      "method": "bayesian_dirichlet",
+      "point_estimate": 0.3756018244992526,
+      "mean": 0.38287476493752276,
+      "median": 0.3823889138994248,
+      "ci95_lo": 0.2567814133986908,
+      "ci95_hi": 0.5133614032110818,
+      "std": 0.06579030125704476,
+      "n_boot": 2000
+    }
+  },
+  "Phase2_GRUD_ref": {
+    "test_pr_auc_mean": 0.26662660689668405,
+    "test_pr_auc_std": 0.06753533319386025,
+    "test_pr_auc_min": 0.18701030069999058,
+    "test_pr_auc_max": 0.3531837196738608,
+    "test_roc_auc_mean": 0.8747865977980155,
+    "test_p20_mean": 0.56,
+    "test_p50_mean": 0.328,
+    "bootstrap_ci_avg_proba": {
+      "metric": "pr_auc",
+      "method": "bayesian_dirichlet",
+      "point_estimate": 0.3153825478054831,
+      "mean": 0.32100450489785737,
+      "median": 0.32065290953315495,
+      "ci95_lo": 0.20799789299962432,
+      "ci95_hi": 0.44193584066855984,
+      "std": 0.06136990535596905,
+      "n_boot": 2000
+    }
+  }
+}
