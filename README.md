@@ -195,5 +195,5 @@ kosdaq-delisting-prediction/
 
 ## Citation / Contact
 
-이현지 · 광운대학교 지능정보공학전공  
+이현지 · 광운대학교 컴퓨터정보공학부  
 데이터: [DART OpenAPI](https://opendart.fss.or.kr/) (금융감독원), KRX 공시
