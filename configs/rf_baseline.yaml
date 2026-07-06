@@ -1,0 +1,26 @@
+model: RandomForest
+description: "S0 canonical baseline — test PR-AUC 0.2876 (seed 42)"
+
+data:
+  labeling: fixed_N1          # 상폐 정확히 1년 전 분기
+  variant: exp-A
+  scaling: signed_log1p
+  imputer: median
+  drop_high_missing:
+    - 매출액증가율
+    - 순이익증가율
+    - 영업이익증가율
+
+hyperparameters:
+  n_estimators: 200
+  max_depth: 10
+  min_samples_leaf: 5
+  max_features: sqrt
+  random_state: 42
+  n_jobs: -1
+
+evaluation:
+  primary_metric: pr_auc
+  bootstrap: bayesian
+  n_boot: 5000
+  seeds: [42, 7, 13, 21, 100]

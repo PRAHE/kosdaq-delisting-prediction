@@ -1,0 +1,35 @@
+model: TransformerT2V
+description: "best model — Transformer + Time2Vec + 감사의견 38 features, test PR-AUC 0.458"
+
+data:
+  labeling: L3_rolling_H24     # train 라벨 (valid/test는 항상 L1로 고정 평가)
+  sequence_length: 3            # K=3 분기 시퀀스
+  features:
+    financial: 33               # 재무비율 27 + 거시 6
+    audit: 5                    # 감사의견 (A1)
+    market: 0                   # 시장 OHLCV 제외 (frozen artifact — #8b)
+  scaling: signed_log1p
+  imputer: median
+
+architecture:
+  model_dim: 64
+  num_heads: 4
+  num_layers: 1
+  dropout: 0.2
+
+training:
+  optimizer: Adam
+  learning_rate: 5.0e-4
+  loss: focal
+  focal_gamma: 2.0
+  focal_alpha: 0.25
+  epochs: 25
+  patience: 8
+  batch_size: 256
+
+evaluation:
+  primary_metric: pr_auc
+  bootstrap: bayesian_paired    # paired vs RF baseline
+  n_boot: 5000
+  seeds: [42, 7, 13, 21, 100]
+  walk_forward_folds: 4

@@ -1,0 +1,61 @@
+.env
+.doppler.yaml
+.vscode/
+
+# Python
+.venv/
+__pycache__/
+
+*.pyc
+*.pyo
+*.pyd
+*.zip
+*.log
+data/etc/
+data/raw/
+data/output/
+data/input/companies_collected.csv
+data/input/pipeline_companies.csv
+data/input/companies_missing.csv
+data/input/companies_missing_legacy.csv
+# 작업 백업/로그
+preprocess/data
+preprocess/*.bak
+logs/
+prs/context.json
+
+# 일회성 작업 도구 (커밋 결정 후 풀거나 유지)
+preprocess/data/scan_raw.py
+preprocess/data/raw_scan_report.md
+
+# 일회성 작업 도구
+preprocess/once/
+
+# docs는 핵심 보고서만 추적
+preprocess/docs/*
+!preprocess/docs/data_cleaning_report.md
+
+# 외부 API 원본 데이터 (용량 + 저작권)
+data/audit_opinion/
+data/major_raw/
+data/market_ohlcv/
+data/supervision/
+data/supervision_raw/
+
+# results — figures/ tables/ 만 공개, 실험 결과 폴더는 비공개
+results/research_*/
+results/exp_*/
+results/portfolio_pr_auc_progression/
+results/team_project/
+
+# 교수 미팅 내부 메모
+docs/research/prof_meeting/
+
+# 개인 발표 자료 및 캡스톤 양식
+*.hwp
+캡스톤설계_*.pdf
+컴퓨정보공학부_*.hwp
+이현지-프로젝트포트폴리오.pdf
+과제제안발표_kw0ss.pdf
+portfolio_slides.md
+
